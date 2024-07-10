@@ -10,17 +10,50 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
           crossorigin="anonymous">
 
-    <title>Права поддержанных вещей</title>
+    <title>Права подержанных вещей</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Search Page</h1>
 
-<form action="/search" method="get">
-    <input type="text" name="search" placeholder="Search...">
-    <button type="submit">Search</button>
-</form>
+<div class="section"> 
+    <div class="container">
+        <div class="menu">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-1">
+                    <h1 class="header">
+                        <strong>Права подержанных вещей</strong>
+                    </h1>
+                </div>
+    
+                <div class="col-lg-4 offset-lg-3">
+                    <form action="/search" method="get">
+                        <input type="text" name="search" placeholder="Search...">
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<button type="button" onclick="window.location.href = 'repair/question/3/'">Ремонт</button>
-<button type="button" onclick="window.location.href = 'product/question/10/'">Товар</button>
+        <div class="row">
+            
+
+            <div class="col-lg-3 offset-lg-2">
+                <div class="blok">
+                    <p class="text-center">Описание</p>
+                    <button type="button"class="btn btn-danger btn-lg form-btn" onclick="window.location.href = 'repair/question/3/'">Ремонт</button>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 offset-lg-2">
+                <div class="blok">
+                    <p class="text-center"> Описание</p>
+                    <button type="button" class="btn btn-danger btn-lg form-btn" onclick="window.location.href = 'product/question/10/'">Товар</button>
+                </div>
+            </div>
+    </div>
+</div>
 </body>
 </html>
