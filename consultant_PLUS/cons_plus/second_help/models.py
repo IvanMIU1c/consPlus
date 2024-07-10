@@ -2,8 +2,8 @@ from django.db import models
 from django.core.files.storage import FileSystemStorage
 
 
-
-fs = FileSystemStorage(location="./media/materials")
+fs = FileSystemStorage(location="./media/doc_templates")
+fs_for_article = FileSystemStorage(location='./media/docs')
 
 
 class Solution(models.Model):
@@ -12,10 +12,21 @@ class Solution(models.Model):
 
 
 class Question(models.Model):
-    PRODUCT = 'product'
-    REPAIR = 'repair'
-    TYPE_CHOICES = [(PRODUCT, 'Product'),
-                    (REPAIR, 'Repair')]
-
+    PRODUCT = 'Товар'
+    REPAIR = 'Ремонт'
+    TYPE_CHOICES = [(PRODUCT, 'Товар'),
+                    (REPAIR, 'Ремонт')]
+    first_question = models.BooleanField(default=True, verbose_name="Первый вопрос")
     problem_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='Тип проблемы')
     question_wording = models.CharField(max_length=512, verbose_name='Формулировка вопроса')
+
+
+class Answer(models.Model):
+    question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='question')
+    text = models.CharField(max_length=50)
+    next_question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name="next_question")
+
+
+class Articles(models.Model):
+    web_url=models.CharField(max_length=1024, verbose_name="Внешняя ссылка")
+    document = models.FileField(storage=fs_for_article, verbose_name="Файл документа")
