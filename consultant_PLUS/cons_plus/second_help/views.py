@@ -17,5 +17,4 @@ def home(request):
 def show_question(request, question_id):
     question = Question.objects.get(id=question_id)
     answers = Answer.objects.filter(question=question)
-
     return render(request, 'question.html', {'question': question, 'answers': answers})
