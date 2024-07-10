@@ -16,9 +16,10 @@ class Question(models.Model):
     REPAIR = 'Ремонт'
     TYPE_CHOICES = [(PRODUCT, 'Товар'),
                     (REPAIR, 'Ремонт')]
-    first_question = models.BooleanField(default=True, verbose_name="Первый вопрос")
+    last_question = models.BooleanField(default=True, verbose_name="Первый вопрос")
     problem_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='Тип проблемы')
     question_wording = models.CharField(max_length=512, verbose_name='Формулировка вопроса')
+    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, related_name="solution", verbose_name="решение")
 
 
 class Answer(models.Model):
