@@ -22,6 +22,6 @@ from second_help import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('repair/question/<int:question_id>/', views.show_question, name='show_question'),
-    path('product/question/<int:question_id>/', views.show_question, name='show_question'),
+    path('repair/question/<int:question_id>/', views.show_question, name='show_repair_question'),
+    path('product/question/<int:question_id>/', views.show_question, name='show_product_question'),
 ]
