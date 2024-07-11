@@ -7,13 +7,14 @@
 </head>
 <body>
 
-<h2>Вопрос {{ question.id }}</h2>
+<h2>Вопрос {{ question.01 }}</h2>
 <p>Выберите один из вариантов ответа:</p>
 
 <h2>{{ question.question_wording }}</h2>
 <form>
     {% csrf_token %}
     {% for answer in answers %}
+        <input type="radio" name="answer" value="{{ answer.next_question.id }}"> {{ answer.text }}<br>
         <input type="radio" name="answer" value="{{ answer.next_question.id }}"> {{ answer.text }}<br>
     {% endfor %}
     <button onclick="redirect(event)">Ответить</button>
