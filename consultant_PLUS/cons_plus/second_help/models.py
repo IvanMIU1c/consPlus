@@ -14,6 +14,9 @@ class Solution(models.Model):
         verbose_name = "Решение"
         verbose_name_plural = "Решения"
 
+    def __str__(self):
+        return self.solution_text
+
 
 class Question(models.Model):
     PRODUCT = 'Товар'
@@ -21,8 +24,6 @@ class Question(models.Model):
     TYPE_CHOICES = [(PRODUCT, 'Товар'), (REPAIR, 'Ремонт')]
     problem_type = models.CharField(max_length=20, choices=TYPE_CHOICES, verbose_name='Тип проблемы')
     question_wording = models.CharField(max_length=512, verbose_name='Формулировка вопроса')
-    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="solution",
-                                 verbose_name="решение")
 
     def __str__(self):
         return self.question_wording
@@ -38,6 +39,8 @@ class Answer(models.Model):
     text = models.CharField(max_length=50)
     next_question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name="next_question",
                                       verbose_name="Следующий вопрос", null=True, blank=True)
+    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="solution",
+                                 verbose_name="решение")
 
     class Meta:
         verbose_name = "Ответ"

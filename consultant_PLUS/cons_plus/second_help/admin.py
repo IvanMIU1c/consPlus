@@ -4,12 +4,12 @@ from .models import *
 
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ('problem_type', 'question_wording', 'solution', 'id')
+    list_display = ('problem_type', 'question_wording', 'id')
 
 
 @admin.register(Answer)
 class AnswerAdmin(admin.ModelAdmin):
-    list_display = ('question', 'text', 'next_question', 'id')
+    list_display = ('question', 'text', 'next_question', 'id', 'solution')
 
 
 @admin.register(Solution)
