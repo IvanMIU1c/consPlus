@@ -22,4 +22,4 @@ def show_question(request, question_id):
 
 def show_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
-    return render(request, 'question.html', {'solution': solution})
+    return render(request, 'solution.html', {'solution': solution})

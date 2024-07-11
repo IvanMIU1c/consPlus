@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  django-web:
+    build: .
+    volumes:
+      - db_sqlite:/usr/src/cons_plus/db/
+      - doc_templates:/usr/src/cons_plus/media/doc_templates/
+    ports:
+      - "8000:8000"
+#    env_file:
+#      - ../django.env
+volumes:
+  db_sqlite:
+  doc_templates:
