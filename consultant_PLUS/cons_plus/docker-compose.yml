@@ -6,7 +6,7 @@ services:
       - db_sqlite:/usr/src/cons_plus/db/
       - doc_templates:/usr/src/cons_plus/media/doc_templates/
     ports:
-      - "8000:8000"
+      - "8002:8002"
 #    env_file:
 #      - ../django.env
 volumes:
