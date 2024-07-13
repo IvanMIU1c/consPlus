@@ -72,18 +72,19 @@
                 var url = window.location.href.split('/').slice(0, -2).join('/') + "/" + selectedAnswer + "/";
                 window.location.href = url;
             } else {
-                console.log(window.location.href.split('/').slice(0, -4)).join('/') + 'solution/' + selectedAnswerSolutionId + '/';
+                var url = window.location.href.split('/').slice(0, -4).join('/') + '/solution/' + selectedAnswerSolutionId + '/';
+                window.location.href = url;
             }
         }
-    
+
         function goBack(){
             history.back();
         }
-    
+
         function goHome(){
             window.location.href = "/";
         }
-    
+
     </script>
     
     
