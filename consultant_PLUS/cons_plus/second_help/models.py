@@ -2,7 +2,7 @@ from django.db import models
 from django.core.files.storage import FileSystemStorage
 
 fs = FileSystemStorage(location="./media/doc_templates")
-fs_for_article = FileSystemStorage(location='./media/docs')
+fs_for_article = FileSystemStorage(location='./media/articles')
 
 
 class Solution(models.Model):
