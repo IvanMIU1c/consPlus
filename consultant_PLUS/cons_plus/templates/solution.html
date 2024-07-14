@@ -2,19 +2,66 @@
 <html lang="ru">
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
 <title>Решение</title>
+
 </head>
 <body>
 
-<h2>Краткое описание решения: </h2>
-<h3>{{ solution }}</h3>
+    <div class="section"> 
+        <div class="container">
 
-<h2> Ссылка на статью: </h2>
-<h3> {{ solution.article }} </h3>
+            <div class="menu">
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-1">
+                        <h1 class="text-style">
+                            <strong>Права подержанных вещей</strong>
+                        </h1>
+                    </div>
+        
+                    <div class="col-lg-4 offset-lg-3">
+    
+                        <form class="form-inline">
+                            <div class="form-group lg-7">
+                                <input type="text" class="form-control" name="search" placeholder="Поиск">
+                            </div>
+                            <div class="form-group lg-4 offset-lg-1">
+                                <button type="submit button" class="btn btn-dark">Найти</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-<h2> Шаблон документа: </h2>
-<h3> {{ solution.document_template }} </h3>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <h2 class="text-style">Краткое описание решения: </h2>
+                    <h4>{{ solution }}</h4>
+        
+                    <h2 class="text-style"> Ссылка на статью: </h2>
+                    <h4> {{ solution.article }} </h4>
+        
+                    <h2 class="text-style"> Шаблон документа: </h2>
+                    <h4> {{ solution.document_template }} </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+                    <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
 <!--<h2>{{ question.question_wording }}</h2>-->
 <!--<form>-->
 <!--    {% csrf_token %}-->
@@ -23,8 +70,10 @@
 <!--    {% endfor %}-->
 <!--    <button onclick="redirect(event)">Ответить</button>-->
 <!--</form>-->
-<button onclick="goBack()">Назад</button>
-<button onclick="goHome()">На главную</button>
+
+
+
+
 
 
 <script>
