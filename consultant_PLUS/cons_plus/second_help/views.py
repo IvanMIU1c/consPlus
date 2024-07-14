@@ -2,8 +2,8 @@ from django.shortcuts import render
 
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
-from .models import Question, Answer, Solution
-
+from .models import Question, Answer, Solution, Articles
+from django.conf import settings
 
 def home(request):
     context = {'catgories': Question.objects.all()}
@@ -23,3 +23,8 @@ def show_question(request, question_id):
 def show_solution(request, solution_id):
     solution = Solution.objects.get(id=solution_id)
     return render(request, 'solution.html', {'solution': solution})
+
+
+def show_article(request, article_name):
+    template_name = article_name
+    return render(request, template_name)

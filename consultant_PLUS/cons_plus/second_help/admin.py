@@ -15,3 +15,8 @@ class AnswerAdmin(admin.ModelAdmin):
 @admin.register(Solution)
 class SolutionAdmin(admin.ModelAdmin):
     list_display = ('solution_text', 'document_template', 'article')
+
+
+@admin.register(Articles)
+class ArticlesAdmin(admin.ModelAdmin):
+    list_display = ('web_url', 'document')
