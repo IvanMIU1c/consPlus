@@ -19,7 +19,6 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="question-blok text-center text-style">
-                        <h2>Вопрос {{ question.id }}</h2>
                         <h3>{{ question.question_wording }}</h3>
                     </div>
                     <p class="text-style text-center">Выберите один из вариантов ответа:</p>
@@ -74,18 +73,19 @@
                 var url = window.location.href.split('/').slice(0, -2).join('/') + "/" + selectedAnswer + "/";
                 window.location.href = url;
             } else {
-                console.log(window.location.href.split('/').slice(0, -4)).join('/') + 'solution/' + selectedAnswerSolutionId + '/';
+                var url = window.location.href.split('/').slice(0, -4).join('/') + '/solution/' + selectedAnswerSolutionId + '/';
+                window.location.href = url;
             }
         }
-    
+
         function goBack(){
             history.back();
         }
-    
+
         function goHome(){
             window.location.href = "/";
         }
-    
+
     </script>
     
     

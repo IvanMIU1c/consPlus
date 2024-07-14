@@ -24,4 +24,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('repair/question/<int:question_id>/', views.show_question, name='show_repair_question'),
     path('product/question/<int:question_id>/', views.show_question, name='show_product_question'),
+    path('solution/<int:solution_id>/', views.show_solution, name='show_solution'),
 ]

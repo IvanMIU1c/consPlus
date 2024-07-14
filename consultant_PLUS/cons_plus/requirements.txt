@@ -1,0 +1,12 @@
+Django~=4.2.3
+djangorestframework~=3.14.0
+django-cors-headers~=4.2.0
+psycopg[c]~=3.1.9 # Docker
+drf-yasg~=1.21.7
+djangorestframework-simplejwt~=5.2.2
+django-minio-storage~=0.5.6
+django-filter~=23.2
+django-environ~=0.10.0
+requests~=2.31.0
+Levenshtein~=0.21.1
+xmltodict~=0.13.0 # django_eu_auth/eu.py
