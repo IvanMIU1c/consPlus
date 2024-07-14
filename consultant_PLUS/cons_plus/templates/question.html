@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+<meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+<title>Опрос</title>
+</head>
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="question-blok text-center text-style">
+                        <h3>{{ question.question_wording }}</h3>
+                    </div>
+                    <p class="text-style text-center">Выберите один из вариантов ответа:</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="blok text-center ">
+                        <form>
+                            {% csrf_token %}
+                            {% for answer in answers %}
+                            <br>
+                                <input type="radio" name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}"> {{ answer.text }}<br>
+                            {% endfor %}
+                            <br>
+                            <br>
+                            <button type="button" class="btn btn-success" onclick="redirect(event)">Ответить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+                    <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+
+
+
+    <script>
+        function redirect(event) {
+            event.preventDefault();
+            var selectedAnswer = document.querySelector('input[name="answer"]:checked').value;
+            var selectedAnswerSolution = document.querySelector('input[name="answer"]:checked').dataset.answerSolution;
+            var selectedAnswerSolutionId = document.querySelector('input[name="answer"]:checked').dataset.answerSolutionId;
+            console.log(selectedAnswerSolutionId)
+            if (selectedAnswerSolution == "None") {
+                var url = window.location.href.split('/').slice(0, -2).join('/') + "/" + selectedAnswer + "/";
+                window.location.href = url;
+            } else {
+                var url = window.location.href.split('/').slice(0, -4).join('/') + '/solution/' + selectedAnswerSolutionId + '/';
+                window.location.href = url;
+            }
+        }
+
+        function goBack(){
+            history.back();
+        }
+
+        function goHome(){
+            window.location.href = "/";
+        }
+
+    </script>
+    
+    
+    
+    </body>
+    </html>
