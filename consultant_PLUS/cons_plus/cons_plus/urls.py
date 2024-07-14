@@ -25,4 +25,7 @@ urlpatterns = [
     path('repair/question/<int:question_id>/', views.show_question, name='show_repair_question'),
     path('product/question/<int:question_id>/', views.show_question, name='show_product_question'),
     path('solution/<int:solution_id>/', views.show_solution, name='show_solution'),
+    path('articles/<str:article_name>/', views.show_article, name='show_article'),
+    path('update_score/', views.update_score, name='update_score'),
+    path('tag_search/', views.tag_search, name='tag_search'),
 ]

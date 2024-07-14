@@ -1,3 +1,4 @@
+from django.core.validators import MaxValueValidator
 from django.db import models
 from django.core.files.storage import FileSystemStorage
 
@@ -7,7 +8,7 @@ fs_for_article = FileSystemStorage(location='./media/articles')
 
 class Solution(models.Model):
     solution_text = models.TextField(verbose_name='Краткое описание решения')
-    document_template = models.FileField(storage=fs, verbose_name='Шаблон документа')
+    document_template = models.FileField(storage=fs, verbose_name='Шаблон документа', null=True, blank=True)
     article = models.ForeignKey('Articles', on_delete=models.CASCADE, null=True, blank=True, verbose_name='Статья')
 
     class Meta:
@@ -48,5 +49,19 @@ class Answer(models.Model):
 
 
 class Articles(models.Model):
-    web_url = models.CharField(max_length=1024, verbose_name="Внешняя ссылка")
-    document = models.FileField(storage=fs_for_article, verbose_name="Файл документа")
+    name = models.CharField(max_length=25, default="default_name")
+    web_url = models.CharField(max_length=1024, verbose_name="Внешняя ссылка", null=True, blank=True)
+    document = models.FileField(storage=fs_for_article, verbose_name="Файл документа", null=True, blank=True)
+    tags = models.ManyToManyField('Tag')
+
+
+class SolutionScore(models.Model):
+    score = models.IntegerField(validators=[MaxValueValidator(5)], verbose_name='Оценка')
+    average_score = models.IntegerField(verbose_name="Средняя оценка")
+    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True,
+                                 related_name="scored_solution",
+                                 verbose_name="решение")
+
+
+class Tag(models.Model):
+    name = models.CharField(max_length=50)
