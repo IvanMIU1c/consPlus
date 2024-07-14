@@ -27,4 +27,5 @@ urlpatterns = [
     path('solution/<int:solution_id>/', views.show_solution, name='show_solution'),
     path('articles/<str:article_name>/', views.show_article, name='show_article'),
     path('update_score/', views.update_score, name='update_score'),
+    path('tag_search/', views.tag_search, name='tag_search'),
 ]

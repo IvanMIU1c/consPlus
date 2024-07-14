@@ -19,4 +19,10 @@ class SolutionAdmin(admin.ModelAdmin):
 
 @admin.register(Articles)
 class ArticlesAdmin(admin.ModelAdmin):
-    list_display = ('web_url', 'document')
+    list_display = ('name', 'web_url', 'document')
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('name', )
+

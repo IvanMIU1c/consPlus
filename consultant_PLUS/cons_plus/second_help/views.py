@@ -1,9 +1,11 @@
 from django.shortcuts import render
-
+from django import forms
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
-from .models import Question, Answer, Solution, Articles, SolutionScore
+from .models import Question, Answer, Solution, Articles, SolutionScore, Tag
 from django.conf import settings
+from .forms import TagSearchForm
+
 
 def home(request):
     context = {'catgories': Question.objects.all()}
@@ -43,3 +45,16 @@ def update_score(request):
         average_score = score_sum / count
         SolutionScore.objects.create(score=score, solution_id=solution_id, average_score=average_score)
         return redirect('home')
+
+
+def tag_search(request):
+    if request.method == 'GET':
+        form = TagSearchForm(request.GET)
+        if form.is_valid():
+            tags = form.cleaned_data['tags']
+            articles = Articles.objects.filter(tags__in=tags).distinct()
+            return render(request, 'tag_search_results.html', {'articles': articles})
+    else:
+        form = TagSearchForm()
+
+    return render(request, 'tag_search.html', {'form': form})
