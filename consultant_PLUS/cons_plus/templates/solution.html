@@ -6,7 +6,6 @@
 <title>Решение</title>
 </head>
 <body>
-
 <h2>Краткое описание решения: </h2>
 <h3>{{ solution }}</h3>
 
@@ -26,6 +25,13 @@
 <button onclick="goBack()">Назад</button>
 <button onclick="goHome()">На главную</button>
 
+<h2>Оцените решение (от 1 до 5): </h2>
+<form method="post" action="{% url 'update_score' %}">
+  {% csrf_token %}
+  <input type="number" name="score" min="1" max="5" required>
+  <input type="hidden" name="id" value="{{ solution.id }}">
+  <button type="submit">Submit</button>
+</form>
 
 <script>
     function goBack(){
@@ -35,5 +41,4 @@
     function goHome(){
         window.location.href = "/";
     }
-
 </script>

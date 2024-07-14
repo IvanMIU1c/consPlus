@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
-from .models import Question, Answer, Solution, Articles
+from .models import Question, Answer, Solution, Articles, SolutionScore
 from django.conf import settings
 
 def home(request):
@@ -28,3 +28,18 @@ def show_solution(request, solution_id):
 def show_article(request, article_name):
     template_name = article_name
     return render(request, template_name)
+
+
+def update_score(request):
+    if request.method == 'POST':
+        score = request.POST.get('score')
+        solution_id = request.POST.get('id')
+        score_sum = 0
+        count = 1
+        solution_scores = SolutionScore.objects.filter(solution_id=solution_id)
+        for solution_score in solution_scores:
+            score_sum += solution_score.score
+            count += 1
+        average_score = score_sum / count
+        SolutionScore.objects.create(score=score, solution_id=solution_id, average_score=average_score)
+        return redirect('home')

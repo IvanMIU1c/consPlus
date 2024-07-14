@@ -54,7 +54,7 @@ class Articles(models.Model):
 
 
 class SolutionScore(models.Model):
-    score = models.IntegerField(validators=(MaxValueValidator(5)), verbose_name='Оценка')
+    score = models.IntegerField(validators=[MaxValueValidator(5)], verbose_name='Оценка')
     average_score = models.IntegerField(verbose_name="Средняя оценка")
-    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="solution",
+    solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="scored_solution",
                                  verbose_name="решение")
