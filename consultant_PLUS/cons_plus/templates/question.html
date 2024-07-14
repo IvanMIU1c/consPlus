@@ -31,8 +31,10 @@
                         <form>
                             {% csrf_token %}
                             {% for answer in answers %}
-                            <br>
-                                <input type="radio" name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}"> {{ answer.text }}<br>
+                            <div class="form-radio-btn" checked>
+                                <input  type="radio" name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}">
+                                <label> {{ answer.text }}</label>
+                            </div>
                             {% endfor %}
                             <br>
                             <br>
