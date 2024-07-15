@@ -14,7 +14,7 @@
 .container{
     margin-top: 3%;
 }
-
+/*
 .form-radio-btn {
 	display: inline-block;
 	margin-right: 10px;
@@ -31,7 +31,7 @@
 	border-radius: 6px;
 	user-select: none;
 }
- 
+
 /* Checked */
 .form-radio-btn input[type=radio]:checked + label {
 	background: #ebeaea;
