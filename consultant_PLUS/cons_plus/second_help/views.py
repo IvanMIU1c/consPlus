@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django import forms
 from django.shortcuts import render, redirect
 from django.http import JsonResponse, HttpResponse
-from .models import Question, Answer, Solution, Articles, SolutionScore, Tag
+from .models import Question, Answer, Solution, Articles, SolutionScore, Tag, DocumentTemplates
 from django.conf import settings
 from .forms import TagSearchForm
 
@@ -48,13 +48,26 @@ def update_score(request):
 
 
 def tag_search(request):
+    articles = Articles.objects.all()
     if request.method == 'GET':
         form = TagSearchForm(request.GET)
         if form.is_valid():
             tags = form.cleaned_data['tags']
             articles = Articles.objects.filter(tags__in=tags).distinct()
-            return render(request, 'tag_search_results.html', {'articles': articles})
+            return render(request, 'all_articles.html', {'articles': articles, 'form': form})
     else:
         form = TagSearchForm()
 
-    return render(request, 'tag_search.html', {'form': form})
+    return render(request, 'all_articles.html', {'articles': articles, 'form': form})
+
+
+def all_articles(request):
+    articles = Articles.objects.all()
+    form = TagSearchForm(request.GET)
+    return render(request, 'all_articles.html', {'articles': articles, 'form': form})
+
+
+def all_docs(request):
+    docs = DocumentTemplates.objects.all()
+    form = TagSearchForm(request.GET)
+    return render(request, 'all_docs.html', {'docs': docs, 'form': form})

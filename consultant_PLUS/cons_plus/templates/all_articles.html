@@ -1,0 +1,12 @@
+
+{% for article in articles %}
+    <h1><a href="/articles/{{article.document}}">{{ article.name }}</a></h1>
+<!--    <p>Теги: {% for tag in article.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>-->
+{% empty %}
+    <p>Статей не найдено</p>
+{% endfor %}
+
+<!--<form method="GET" action="{% url 'tag_search' %}">-->
+<!--    {{ form }}-->
+<!--    <input type="submit" value="Найти">-->
+<!--</form>-->

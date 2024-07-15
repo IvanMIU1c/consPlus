@@ -55,6 +55,12 @@ class Articles(models.Model):
     tags = models.ManyToManyField('Tag')
 
 
+class DocumentTemplates(models.Model):
+    name = models.CharField(max_length=125, default='def_name')
+    document = models.FileField(storage=fs, verbose_name="Шаблон документа", null=True, blank=True)
+    tags = models.ManyToManyField('Tag')
+
+
 class SolutionScore(models.Model):
     score = models.IntegerField(validators=[MaxValueValidator(5)], verbose_name='Оценка')
     average_score = models.IntegerField(verbose_name="Средняя оценка")

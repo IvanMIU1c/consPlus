@@ -28,4 +28,6 @@ urlpatterns = [
     path('articles/<str:article_name>/', views.show_article, name='show_article'),
     path('update_score/', views.update_score, name='update_score'),
     path('tag_search/', views.tag_search, name='tag_search'),
+    path('all_articles/', views.all_articles, name='all_articles'),
+    path('all_docs/', views.all_docs, name='all_docs'),
 ]
