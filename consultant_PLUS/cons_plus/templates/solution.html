@@ -42,7 +42,21 @@
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
                     <h2 class="text-style">Краткое описание решения: </h2>
-                    <h4>{{ solution }}</h4>
+                    <h4>
+                        {% for word in solution.solution_text.split %}
+                            {% if word == "закон" %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/?ysclid=lyn832j7n8831165449">{{ word }}</a>
+                            {% elif word == "течение_гарантийного_срока" %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">{{ word }}</a>
+                            {% elif word == "2_года" %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">{{ word }}</a>
+                            {% elif word == "оснований" %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/">{{ word }}</a>
+                            {% else %}
+                                {{ word }}
+                            {% endif %}
+                        {% endfor %}
+                    </h4>
 
                     {% if solution.article %}
                     <h2 class="text-style"> Ссылка на статью: </h2>

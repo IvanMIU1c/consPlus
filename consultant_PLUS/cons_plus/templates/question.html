@@ -21,7 +21,17 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="question-blok text-center text-style">
-                        <h3>{{ question.question_wording }}</h3>
+                        <h3>
+                        {% for word in question.question_wording.split %}
+                            {% if word == "технически_сложным?" %}
+                                <a href="/articles/С_Что_такое_технически_сложный_товар.html">{{ word }}</a>
+                            {% elif word == "основанием_для_возврата_товара" %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_373622/46388f66cceb1d9479e5a70e5710c912dc4f3579/">{{ word }}</a>
+                            {% else %}
+                                {{ word }}
+                            {% endif %}
+                        {% endfor %}
+                        </h3>
                     </div>
                     <p class="text-style text-center">Выберите один из вариантов ответа:</p>
                 </div>
