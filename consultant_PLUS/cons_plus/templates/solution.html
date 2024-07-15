@@ -43,12 +43,16 @@
                 <div class="col-lg-8 offset-lg-2">
                     <h2 class="text-style">Краткое описание решения: </h2>
                     <h4>{{ solution }}</h4>
-        
+
+                    {% if solution.article %}
                     <h2 class="text-style"> Ссылка на статью: </h2>
-                    <h4> {{ solution.article }} </h4>
-        
+                    lt;h4> </h4>
+                    {% endif %}
+
+                    {% if solution.document_template %}
                     <h2 class="text-style"> Шаблон документа: </h2>
-                    <h4> {{ solution.document_template }} </h4>
+                    lt;h4> </h4>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
