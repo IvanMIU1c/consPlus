@@ -1,5 +1,76 @@
-{% for article in articles %}
-    <h2>{{ article.name }}</h2>
-{% empty %}
-    <p>Статей не найдено</p>
-{% endfor %}
+<!DOCTYPE html>
+<html lang="ru">
+<html>
+<head>
+<meta charset="utf-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+    {% load static %} 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="style.css">
+
+
+<title>tag_search_results</title>
+</head>
+<body style="background-color: #f5f5f8;">
+
+
+<div class="menu">
+    <div class="row">
+        <div class="col-lg-4 offset-lg-1">
+            <h1 class="text-style">
+                    <strong>Права подержанных вещей</strong>
+            </h1>
+        </div>
+
+        <div class="col-lg-4 offset-lg-3">
+
+                <form class="form-inline">
+                    <div class="form-group lg-7">
+                        <input type="text" class="form-control" name="search" placeholder="Поиск">
+                    </div>
+                    <div class="form-group lg-4 offset-lg-1">
+                        <button type="submit button" class="btn btn-dark">Найти</button>
+                    </div>    
+                </form>
+            </div>
+        </div>
+
+    <div class="row">
+            <div class="col-lg-2 offset-lg-7">
+                <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
+            </div>
+            <div class="col-lg-2 ">
+                <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
+            </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-8 offset-lg-2">
+        {% for article in articles %}
+            <h2>{{ article.name }}</h2>
+        {% empty %}
+            <p>Статей не найдено</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<!--<form method="GET" action="{% url 'tag_search' %}">-->
+<!--    {{ form }}-->
+<!--    <input type="submit" value="Найти">-->
+<!--</form>-->
+
+
+    
+</body>
+</html>
+
+
+
