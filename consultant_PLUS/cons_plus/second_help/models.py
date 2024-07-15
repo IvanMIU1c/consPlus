@@ -49,7 +49,7 @@ class Answer(models.Model):
 
 
 class Articles(models.Model):
-    name = models.CharField(max_length=25, default="default_name")
+    name = models.CharField(max_length=125, default="default_name")
     web_url = models.CharField(max_length=1024, verbose_name="Внешняя ссылка", null=True, blank=True)
     document = models.FileField(storage=fs_for_article, verbose_name="Файл документа", null=True, blank=True)
     tags = models.ManyToManyField('Tag')
@@ -65,3 +65,6 @@ class SolutionScore(models.Model):
 
 class Tag(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
