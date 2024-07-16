@@ -156,5 +156,17 @@
 
 	</p>
 </div>
+<button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+<button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
 </body>
 </html>
+
+<script>
+    function goBack(){
+        history.back();
+    }
+
+    function goHome(){
+        window.location.href = "/";
+    }
+</script>
