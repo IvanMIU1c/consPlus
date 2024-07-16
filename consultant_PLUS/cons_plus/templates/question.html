@@ -21,9 +21,11 @@
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
+            <a href="/">
                 <h1 class="text-style">
                         <strong>Права подержанных вещей</strong>
                 </h1>
+            </a>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
@@ -41,14 +43,13 @@
 
         <div class="row">
                 <div class="col-lg-2 offset-lg-7">
-                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
+                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = '/tag_search/'">Каталог статей</button>
                 </div>
                 <div class="col-lg-2 ">
-                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
+                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = '/all_docs/'">Каталог Шаблонов</button>
                 </div>
         </div>
     </div>
-
 
         <div class="container">
             <div class="row">
@@ -57,13 +58,13 @@
                         <h3>
                         {% for word in question.question_wording.split %}
                             {% if word == "технически_сложным?" %}
-                                <a href="/articles/С_Что_такое_технически_сложный_товар.html">{{ word }}</a>
+                                <a href="/articles/С_Что_такое_технически_сложный_товар.html">технически сложным?</a>
                             {% elif word == "основанием_для_возврата_товара" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_373622/46388f66cceb1d9479e5a70e5710c912dc4f3579/">{{ word }}</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_373622/46388f66cceb1d9479e5a70e5710c912dc4f3579/">основанием для возврата товара</a>
                             {% elif word == "срок_службы" %}
-                                <a href="/articles/С-Что_такое_срок_службы.html">{{ word }}</a>
+                                <a href="/articles/С-Что_такое_срок_службы.html">срок службы</a>
                             {% elif word == "товаром_длительного_пользования?" %}
-                                <a href="/articles/С_Что_такое_товар_длительного_пользования.html">{{ word }}</a>
+                                <a href="/articles/С_Что_такое_товар_длительного_пользования.html">товаром длительного пользования?</a>
                             {% else %}
                                 {{ word }}
                             {% endif %}
@@ -91,18 +92,8 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
-                    <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
-                </div>
-
-            </div>
-
+            <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+            <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
         </div>
     </div>
 
