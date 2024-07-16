@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<!--    <link rel="stylesheet" href="style.css">-->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -17,19 +18,18 @@
     <title>Права подержанных вещей</title>
 
 </head>
-<body>
+<body style="background-color: #f5f5f8;">
 
-<div class="section">
-    <div class="container">
-        <div class="menu">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-1">
-                    <h1 class="text-style">
+
+    <div class="menu">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1">
+                <h1 class="text-style">
                         <strong>Права подержанных вещей</strong>
-                    </h1>
-                </div>
+                </h1>
+            </div>
 
-                <div class="col-lg-4 offset-lg-3">
+            <div class="col-lg-4 offset-lg-3">
 
                     <form class="form-inline">
                         <div class="form-group lg-7">
@@ -40,38 +40,37 @@
                         </div>
                     </form>
                 </div>
-            <div class="col-lg-5 offset-lg-1">
-                <div class="blok">
-                    <button type="button" class="btn btn-danger btn-lg btn-block" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
-                </div>
             </div>
-            <div class="col-lg-5 offset-lg-1">
-                <div class="blok">
-                    <button type="button" class="btn btn-danger btn-lg btn-block" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
-                </div>
-            </div>
-            </div>
-        </div>
 
         <div class="row">
-
-
-            <div class="col-lg-3 offset-lg-2">
-                <div class="blok">
-                    <button type="button"class="btn btn-danger btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Ремонт</button>
+                <div class="col-lg-2 offset-lg-7">
+                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
                 </div>
+                <div class="col-lg-2 ">
+                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
+                </div>
+        </div>
+    </div>
 
-            </div>
-
-
-            <div class="col-lg-3 offset-lg-2">
+    <div class="container">
+            <div class="col-lg-9 offset-lg-1">
+                <div class="blok-description">
+                    Данная анкета поможет Вам разобраться с тем, как вернуть товар, бывший в употреблении, то есть б/у. Б/у товары продаются не новыми, их использовали ранее другие владельцы. Не все б/у товары можно вернуть. Данная анкета предусмотрена только для товаров ненадлежащего качества, имеющие недостатки, из-за которых использование товаров невозможно в полной мере и по назначению. Кроме того, если Ваша проблема связана с бытовой техникой, мобильными телефонами или прочими технически сложными товарами, то после прохождение анкеты поможет Вам сдать товар такого типа.
+                </div>
                 <div class="blok">
-                    <button type="button" class="btn btn-danger btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Возврат</button>
+                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Ремонт</button>
+                </div>
+            </div>
+            <div class="col-lg-9 offset-lg-1">
+                <div class="blok-description">
+                    Данная анкета поможет Вам разобраться с тем, как вернуть товар, бывший в употреблении, то есть б/у. Б/у товары продаются не новыми, их использовали ранее другие владельцы. Не все б/у товары можно вернуть. Данная анкета предусмотрена только для товаров ненадлежащего качества, имеющие недостатки, из-за которых использование товаров невозможно в полной мере и по назначению. Кроме того, если Ваша проблема связана с бытовой техникой, мобильными телефонами или прочими технически сложными товарами, то после прохождение анкеты поможет Вам сдать товар такого типа.
+                </div>
+                <div class="blok">
+                    <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Возврат</button>
                 </div>
             </div>
     </div>
 
-</div>
 
 </body>
 </html>
