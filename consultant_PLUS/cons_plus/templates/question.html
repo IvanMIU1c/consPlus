@@ -10,7 +10,7 @@
             crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="style.css">   -->
 
 <title>Опрос</title>
 </head>
@@ -77,13 +77,19 @@
                         <form>
                             {% csrf_token %}
                             {% for answer in answers %}
-                            <div class="form-radio-btn" checked>
-                                <input  type="radio" name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}">
-                                <label> {{ answer.text }}</label>
-                            </div>
+                            <label>
+                                <input type="radio"  name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}" >
+                                <span>{{ answer.text }}</span>
+                            </label>
+                            <br>
                             {% endfor %}
-
                             <button type="button" class="btn btn-success" onclick="redirect(event)">Ответить</button>
+
+
+
+
+
+
                         </form>
                     </div>
                 </div>
