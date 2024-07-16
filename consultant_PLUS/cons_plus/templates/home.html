@@ -1,5 +1,5 @@
 <!doctype html>
-{% load static %} 
+{% load static %}
 <html lang="en">
 <head>
     <!-- Required meta tags -->
@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="style.css">
+<!--    <link rel="stylesheet" href="style.css">-->
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous">
-
 
     <title>Права подержанных вещей</title>
 
@@ -24,9 +23,7 @@
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
-                <h1 class="text-style">
-                        <strong>Права подержанных вещей</strong>
-                </h1>
+                <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
@@ -37,7 +34,7 @@
                         </div>
                         <div class="form-group lg-4 offset-lg-1">
                             <button type="submit button" class="btn btn-dark">Найти</button>
-                        </div>    
+                        </div>
                     </form>
                 </div>
             </div>
@@ -51,28 +48,26 @@
                 </div>
         </div>
     </div>
-    
+
     <div class="container">
-
-
         <div class="row">
-
-            <div class="col-lg-6 offset-lg-1">
+            <div class="col-lg-3 ">
                 <div class="blok-description">
-                    
+                    Данная анкета поможет Вам разобраться с возможными проблемами при сдаче товара в ремонт или получить консультацию по выполненому ремонту (текс-заглушка)
+                </div>
+                <div class="blok">
+                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Ремонт</button>
                 </div>
             </div>
-
-            <div class="col-lg-3 offset-lg-1">
-                <div class="blok">
-                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/3/'">Ремонт</button>
+            <div class="col-lg-5 ">
+                <div class="blok-description">
+                    Данная анкета поможет Вам разобраться с тем, как вернуть товар, бывший в употреблении, то есть б/у. Б/у товары продаются не новыми, их использовали ранее другие владельцы. Не все б/у товары можно вернуть. Данная анкета предусмотрена только для товаров ненадлежащего качества, имеющих недостатки, из-за которых использование товаров невозможно в полной мере и по назначению. Кроме того, если Ваша проблема связана с бытовой техникой, мобильными телефонами или прочими технически сложными товарами, то прохождение анкеты поможет Вам сдать товар такого типа.
                 </div>
-
-  
                 <div class="blok">
                     <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Возврат</button>
                 </div>
             </div>
+        </div>
     </div>
 
 

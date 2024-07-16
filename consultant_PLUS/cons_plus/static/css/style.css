@@ -1,6 +1,9 @@
 .text-style{
     color: #54728c;
 }
+.text-left{
+	text-align: left;
+}
 
 .menu{
     margin-bottom: 3%;
@@ -12,7 +15,7 @@
 	background-color: white;
 }
 .question-blok{
-    padding: 10%;
+    padding: 4%;
     background-color: white;
     margin: 1% ;
     margin-bottom: 2%;
@@ -34,19 +37,22 @@
 	color: white !important;
 }
 
+.btn-home{
+
+}
+
 .blok{
-	margin: 1%;
-	height: 90px;
+	margin: 3%;
 }
 
 .blok-description{
 
 	background-color: white;
-	height: 300px;
 	-webkit-box-shadow: 4px 4px 42px -6px rgba(34, 60, 80, 0.39);
 	-moz-box-shadow: 4px 4px 42px -6px rgba(34, 60, 80, 0.39);
 	box-shadow: 4px 4px 42px -6px rgba(34, 60, 80, 0.39);
 	border-radius: 8px;
+	padding: 2%;
 }
 
 
@@ -81,4 +87,6 @@
 .form-radio-btn label:active {
 	background: #ebeaea;
 }
+
+
 
