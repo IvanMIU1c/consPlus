@@ -54,6 +54,9 @@ class Articles(models.Model):
     document = models.FileField(storage=fs_for_article, verbose_name="Файл документа", null=True, blank=True)
     tags = models.ManyToManyField('Tag')
 
+    def __str__(self):
+        return self.name
+
 
 class DocumentTemplates(models.Model):
     name = models.CharField(max_length=125, default='def_name')

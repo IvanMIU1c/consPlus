@@ -79,7 +79,7 @@
 
                     {% if solution.article %}
                     <h2 class="text-style"> Ссылка на статью: </h2>
-                    lt;h4> </h4>
+                    <h4><a href="/articles/{{ solution.article.document }}"> {{ solution.article.name }}  </a></h4>
                     {% endif %}
 
                     {% if solution.document_template %}
