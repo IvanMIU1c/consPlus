@@ -59,8 +59,7 @@
 <div class="row">
     <div class="col-lg-8 offset-lg-2">
         {% for doc in docs %}
-            <h1><a href="/articles/{{doc.document}}">{{ doc.name }}</a></h1>
-        <!--    <p>Теги: {% for tag in article.tags.all %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>-->
+            <h1><a href="/doc_templates/{{doc.document}}" download>Загрузить {{ doc.name }}</a></h1>
         {% empty %}
             <p>Шаблонов не найдено</p>
         {% endfor %}

@@ -26,3 +26,8 @@ class ArticlesAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name', )
 
+
+@admin.register(DocumentTemplates)
+class DocumentTemplatesAdmin(admin.ModelAdmin):
+    list_display = ('name', 'document')
+
