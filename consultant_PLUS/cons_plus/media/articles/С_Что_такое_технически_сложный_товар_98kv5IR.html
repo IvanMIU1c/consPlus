@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+{% extends 'base.html' %}
+
+{% block content %}
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title></title>
@@ -121,7 +124,7 @@
 <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
 </body>
 </html>
-
+{% endblock %}
 
 <script>
 	function goBack(){

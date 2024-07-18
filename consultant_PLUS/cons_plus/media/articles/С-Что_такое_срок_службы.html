@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+{% extends 'base.html' %}
+
+{% block content %}
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
 	<title></title>
@@ -27,8 +30,8 @@
 способен делать фотографии, а автомобиль
 передвигаться по дороге. В российском
 законодательстве срок службы регулируется
-Гражданским кодексом и Законом &quot;О
-защите прав потребителей&quot; (ЗоЗПП).</font></font></font></p>
+Гражданским кодексом и <a href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=454123&dst=100030&cacheid=122149996FB5B6BBADDD389C31A3D7E4&mode=splus&rnd=1bjgrIUOW20xUGZ5#p9GlrIURGGIFMMrO"> Законом &quot;О
+защите прав потребителей&quot; (ЗоЗПП).</a></font></font></font></p>
 <p align="justify" style="line-height: 115%; margin-top: 0.21cm; margin-bottom: 0.21cm">
 <font color="#222222"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt">Срок
 службы устанавливается изготовителем
@@ -71,7 +74,7 @@
 <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
 </body>
 </html>
-
+{% endblock %}
 <script>
     function goBack(){
         history.back();

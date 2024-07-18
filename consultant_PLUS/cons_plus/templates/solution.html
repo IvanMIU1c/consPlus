@@ -14,17 +14,16 @@
 
 </head>
 <body>
-        <div class="menu">
-            <div class="row">
-                <div class="col-lg-4 offset-lg-1">
-                    <a href="/">
-                        <h1 class="text-style">
-                                <strong>Права подержанных вещей</strong>
-                        </h1>
-                    </a>
-                </div>
+    <div class="section">
+        <div class="container">
 
-                <div class="col-lg-4 offset-lg-3">
+            <div class="menu">
+                <div class="row">
+                    <div class="col-lg-4 offset-lg-1">
+                        <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
+                    </div>
+
+                    <div class="col-lg-4 offset-lg-3">
 
                         <form class="form-inline">
                             <div class="form-group lg-7">
@@ -36,39 +35,31 @@
                         </form>
                     </div>
                 </div>
-
-            <div class="row">
-                    <div class="col-lg-2 offset-lg-7">
-                        <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = '/tag_search/'">Каталог статей</button>
-                    </div>
-                    <div class="col-lg-2 ">
-                        <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = '/all_docs/'">Каталог Шаблонов</button>
-                    </div>
             </div>
-        </div>
-
 
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h2 class="text-style">Краткое решение: </h2>
+                    <h2 class="text-style">Краткое описание решения: </h2>
                     <h4>
                         {% for word in solution.solution_text.split %}
-                            {% if word == "закон" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/?ysclid=lyn832j7n8831165449">{{ word }}</a>
+                            {% if word == "Закон_о_защите_прав_потребителей" %}
+                                <a href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=454123&dst=0&edition=etD&rnd=fppXoIU5h76OSUO5#paFZoIUoMJYbeCu8">Закон о защите прав потребителей</a>
+                            {% elif word == "общими_положениями" %}
+                                <a href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=449455&dst=100008&cacheid=25A3B81CACA21F86D0AD0EB264F73D07&mode=splus&rnd=0HVgQQ#azaZoIUN71bkCx7P">общими положениями</a>
                             {% elif word == "течение_гарантийного_срока" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">течение гарантийного срока</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">течение гарантийного срока </a>
                             {% elif word == "2_года" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">2 года</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/2c9918ca490dc2eb68bb07347485443dc898183f/">2 года </a>
                             {% elif word == "оснований" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/">{{ word }}</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/76ae101b731ecc22467fd9f1f14cb9e2b8799026/">оснований </a>
                             {% elif word == "потребовать_от_изготовителя" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/872233433eef65927dd8b6d682ccb064c2201019/">потребовать от изготовителя</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/872233433eef65927dd8b6d682ccb064c2201019/">потребовать от изготовителя </a>
                             {% elif word == "потребовать_" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/c771be122fddbc6e3087cbf43aa39a85a960a296/">потребовать</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/c771be122fddbc6e3087cbf43aa39a85a960a296/">потребовать </a>
                             {% elif word == "потребовать_от_исполнителя" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/41fd88c62c89ddba445ff85149b17a63b9679810/">потребовать от исполнителя</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/41fd88c62c89ddba445ff85149b17a63b9679810/">потребовать от исполнителя </a>
                             {% elif word == "следующие_требования" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/41fd88c62c89ddba445ff85149b17a63b9679810/">следующие требования</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/41fd88c62c89ddba445ff85149b17a63b9679810/">{{ word }}</a>
                             {% elif word == "можете:" %}
                                 <a href="https://www.consultant.ru/document/cons_doc_LAW_305/f190d8f6c0d4f03af399cc0efcc722d87a0f83a6/">можете:</a>
                             {% else %}
@@ -84,7 +75,7 @@
 
                     {% if solution.document_template %}
                     <h2 class="text-style"> Шаблон документа: </h2>
-                    lt;h4> </h4>
+                    <h4><a href="/doc_templates/{{ solution.document_template }}"> {{ solution.document_template }}  </a></h4>
                     {% endif %}
                 </div>
             </div>
@@ -93,11 +84,10 @@
                     <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
                     <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
                 </div>
-            
+
             </div>
         </div>
     </div>
-</body>
 
 
 <!--<h2>{{ question.question_wording }}</h2>-->

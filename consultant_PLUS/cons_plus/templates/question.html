@@ -10,7 +10,7 @@
             crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-
+    <!-- <link rel="stylesheet" href="style.css">   -->
 
 <title>Опрос</title>
 </head>
@@ -21,11 +21,7 @@
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
-            <a href="/">
-                <h1 class="text-style">
-                        <strong>Права подержанных вещей</strong>
-                </h1>
-            </a>
+                    <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
@@ -43,13 +39,14 @@
 
         <div class="row">
                 <div class="col-lg-2 offset-lg-7">
-                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = '/tag_search/'">Каталог статей</button>
+                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
                 </div>
                 <div class="col-lg-2 ">
-                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = '/all_docs/'">Каталог Шаблонов</button>
+                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
                 </div>
         </div>
     </div>
+
 
         <div class="container">
             <div class="row">
@@ -65,6 +62,8 @@
                                 <a href="/articles/С-Что_такое_срок_службы.html">срок службы</a>
                             {% elif word == "товаром_длительного_пользования?" %}
                                 <a href="/articles/С_Что_такое_товар_длительного_пользования.html">товаром длительного пользования?</a>
+                            {% elif word == "гарантийный_срок" %}
+                                <a href="/articles/С-Что_такое_гарантииныи_срок.html">гарантийный срок</a>
                             {% else %}
                                 {{ word }}
                             {% endif %}
@@ -76,24 +75,39 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <div class="blok text-center ">
+                    <div class=" text-center ">
                         <form>
                             {% csrf_token %}
                             {% for answer in answers %}
-                            <div class="form-radio-btn" checked>
-                                <input  type="radio" name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}">
-                                <label> {{ answer.text }}</label>
-                            </div>
+                            <label>
+                                <input type="radio"  name="answer" value="{{ answer.next_question.id }}" data-answer-solution-id="{{ answer.solution.id }}" data-answer-solution="{{ answer.solution }}" >
+                                <span>{{ answer.text }}</span>
+                            </label>
+                            <br>
                             {% endfor %}
-                            <br>
-                            <br>
                             <button type="button" class="btn btn-success" onclick="redirect(event)">Ответить</button>
+
+
+
+
+
+
                         </form>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
-            <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
+
+
+
+
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+                    <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
