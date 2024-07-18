@@ -37,7 +37,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='question',
                                  verbose_name="Текущий вопрос")
-    text = models.CharField(max_length=50)
+    text = models.CharField(max_length=150)
     next_question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name="next_question",
                                       verbose_name="Следующий вопрос", null=True, blank=True)
     solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="solution",

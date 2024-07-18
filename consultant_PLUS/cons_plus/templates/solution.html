@@ -2,6 +2,15 @@
 <html lang="ru">
 <html>
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNS2XSB28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZNS2XSB28');
+</script>
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -62,6 +71,8 @@
                                 <a href="https://www.consultant.ru/document/cons_doc_LAW_305/41fd88c62c89ddba445ff85149b17a63b9679810/">{{ word }}</a>
                             {% elif word == "можете:" %}
                                 <a href="https://www.consultant.ru/document/cons_doc_LAW_305/f190d8f6c0d4f03af399cc0efcc722d87a0f83a6/">можете:</a>
+                            {% elif word == "обладающий_такими_же_свойствами." %}
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_305/f190d8f6c0d4f03af399cc0efcc722d87a0f83a6/">обладающий такими же свойствами.</a>
                             {% else %}
                                 {{ word }}
                             {% endif %}

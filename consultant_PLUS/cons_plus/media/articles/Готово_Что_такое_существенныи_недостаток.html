@@ -24,11 +24,11 @@ line-height:115%;font-family:"Times New Roman",serif;mso-fareast-font-family:
  ID="-936358621"><a style='mso-comment-reference:_1;mso-comment-date:20240718T0928'></w:Sdt></a></span><span
 style='mso-comment-continuation:1'><span lang=ru style='font-size:12.0pt;
 line-height:115%;font-family:"Times New Roman",serif;mso-fareast-font-family:
-"Times New Roman";background:white;mso-highlight:white'>в законе</span></span><span
+"Times New Roman";background:white;mso-highlight:white'><a href="https://www.consultant.ru/cons/cgi/online.cgi?req=doc&base=LAW&n=454123&dst=100330&cacheid=E629E495259AD8FFC0EE50CA3E9D3684&mode=splus&rnd=1bjgrIUOW20xUGZ5#svwxrIURrgqJKirH"> в законе </a></span></span><span
 lang=ru><![if !supportAnnotations]><a class=msocomanchor id="_anchor_1"
 onmouseover="msoCommentShow('_anchor_1','_com_1')"
 onmouseout="msoCommentHide('_com_1')" href="#_msocom_1" language=JavaScript
-name="_msoanchor_1">[1]</a><![endif]><span style='mso-special-character:comment'>&nbsp;</span></span><span
+name="_msoanchor_1"></a><![endif]><span style='mso-special-character:comment'>&nbsp;</span></span><span
 lang=ru style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman",serif;
 mso-fareast-font-family:"Times New Roman";background:white;mso-highlight:white'>.
 К существенным относятся недостатки товара (работы, услуги), которые:<span
@@ -101,30 +101,20 @@ background:white;mso-highlight:white'>Таким образом, существ�
 
 </div>
 
-<div style='mso-element:comment-list'><![if !supportAnnotations]>
-
-<hr class=msocomoff align=left size=1 width="33%">
-
-<![endif]>
-
-<div style='mso-element:comment'><![if !supportAnnotations]>
-
-<div id="_com_1" class=msocomtxt language=JavaScript
-onmouseover="msoCommentShow('_anchor_1','_com_1')"
-onmouseout="msoCommentHide('_com_1')"><![endif]><span style='mso-comment-author:
-Алина'><![if !supportAnnotations]><a name="_msocom_1"></a><![endif]></span>
-
-<p class=MsoNormal style='line-height:normal;mso-pagination:none;border:none;
-mso-padding-alt:31.0pt 31.0pt 31.0pt 31.0pt;mso-border-shadow:yes'><span
-lang=ru style='color:black'>https://www.consultant.ru/cons/cgi/online.cgi?req=doc&amp;base=LAW&amp;n=454123&amp;dst=100330&amp;cacheid=E629E495259AD8FFC0EE50CA3E9D3684&amp;mode=splus&amp;rnd=1bjgrIUOW20xUGZ5#svwxrIURrgqJKirH<o:p></o:p></span></p>
-
-<![if !supportAnnotations]></div>
-
-<![endif]></div>
-
-</div>
-
+<button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
+<button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
 </body>
 
 </html>
+    <script>
+
+        function goBack(){
+            history.back();
+        }
+
+        function goHome(){
+            window.location.href = "/";
+        }
+
+    </script>
 {% endblock %}
