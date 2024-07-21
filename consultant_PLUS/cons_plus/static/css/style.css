@@ -36,10 +36,13 @@
 	background-color: #54728c !important;
 	color: white !important;
 }
-
-.btn-home{
-
+.btn-style-3, .btn-style-3:active, .btn-style-3:focus{
+	background-color: white ;
+	border: 0;
+	box-shadow: none;
+	outline: 0;
 }
+
 
 .blok{
 	margin: 3%;
@@ -52,7 +55,8 @@
 	-moz-box-shadow: 4px 4px 42px -6px rgba(34, 60, 80, 0.39);
 	box-shadow: 4px 4px 42px -6px rgba(34, 60, 80, 0.39);
 	border-radius: 8px;
-	padding: 2%;
+	padding: 3%;
+	
 }
 
 
