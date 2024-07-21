@@ -37,7 +37,7 @@ class Question(models.Model):
 class Answer(models.Model):
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='question',
                                  verbose_name="Текущий вопрос")
-    text = models.CharField(max_length=50)
+    text = models.CharField(max_length=150)
     next_question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name="next_question",
                                       verbose_name="Следующий вопрос", null=True, blank=True)
     solution = models.ForeignKey('Solution', on_delete=models.CASCADE, null=True, blank=True, related_name="solution",
@@ -53,6 +53,9 @@ class Articles(models.Model):
     web_url = models.CharField(max_length=1024, verbose_name="Внешняя ссылка", null=True, blank=True)
     document = models.FileField(storage=fs_for_article, verbose_name="Файл документа", null=True, blank=True)
     tags = models.ManyToManyField('Tag')
+
+    def __str__(self):
+        return self.name
 
 
 class DocumentTemplates(models.Model):

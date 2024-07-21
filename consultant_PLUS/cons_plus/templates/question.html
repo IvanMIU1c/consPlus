@@ -2,6 +2,15 @@
 <html lang="ru">
 <html>
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNS2XSB28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZNS2XSB28');
+</script>
 <meta charset="utf-8">
 
     <!-- Bootstrap CSS -->
@@ -17,15 +26,15 @@
 <body>
 <body style="background-color: #f5f5f8;">
 
+
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
-                    <button class=" btn-style-3" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
+                    <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
 
-                <!-- 
                     <form class="form-inline">
                         <div class="form-group lg-7">
                             <input type="text" class="form-control" name="search" placeholder="Поиск">
@@ -34,8 +43,6 @@
                             <button type="submit button" class="btn btn-dark">Найти</button>
                         </div>
                     </form>
-                --> 
-
                 </div>
             </div>
 
@@ -44,7 +51,7 @@
                     <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
                 </div>
                 <div class="col-lg-2 ">
-                    <button type="button" class="btn btsn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
+                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
                 </div>
         </div>
     </div>
@@ -57,13 +64,21 @@
                         <h3>
                         {% for word in question.question_wording.split %}
                             {% if word == "технически_сложным?" %}
-                                <a href="/articles/С_Что_такое_технически_сложный_товар.html">{{ word }}</a>
+                                <a href="/articles/С_Что_такое_технически_сложный_товар.html">технически сложным?</a>
                             {% elif word == "основанием_для_возврата_товара" %}
-                                <a href="https://www.consultant.ru/document/cons_doc_LAW_373622/46388f66cceb1d9479e5a70e5710c912dc4f3579/">{{ word }}</a>
+                                <a href="https://www.consultant.ru/document/cons_doc_LAW_373622/46388f66cceb1d9479e5a70e5710c912dc4f3579/">основанием для возврата товара</a>
                             {% elif word == "срок_службы" %}
-                                <a href="/articles/С-Что_такое_срок_службы.html">{{ word }}</a>
+                                <a href="/articles/С-Что_такое_срок_службы.html">срок службы</a>
                             {% elif word == "товаром_длительного_пользования?" %}
-                                <a href="/articles/С_Что_такое_товар_длительного_пользования.html">{{ word }}</a>
+                                <a href="/articles/С_Что_такое_товар_длительного_пользования.html">товаром длительного пользования?</a>
+                            {% elif word == "гарантийный_срок" %}
+                                <a href="/articles/С-Что_такое_гарантииныи_срок.html">гарантийный срок</a>
+                            {% elif word == "технические_документы" %}
+                                <a href="/articles/С_Что_такое_технические_документы_на_товар.html">технические документы</a>
+                            {% elif word == "физического_лица?" %}
+                                <a href="/articles/Готово_Чем_физическое_лицо_отличается_от_юридического_лица.html">физического лица ?</a>
+                            {% elif word == "существенные_недостатки?" %}
+                                <a href="/articles/Готово_Что_такое_существенныи_недостаток.html">существенные недостатки?</a>
                             {% else %}
                                 {{ word }}
                             {% endif %}

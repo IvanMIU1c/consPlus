@@ -2,6 +2,15 @@
 <html lang="ru">
 <html>
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNS2XSB28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZNS2XSB28');
+</script>
 <meta charset="utf-8">
 
     <!-- Bootstrap CSS -->
@@ -21,22 +30,19 @@
 <div class="menu">
     <div class="row">
         <div class="col-lg-4 offset-lg-1">
-            <button class="btn-style-3" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
+            <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
         </div>
 
         <div class="col-lg-4 offset-lg-3">
 
-                <!-- 
-                    <form class="form-inline">
-                        <div class="form-group lg-7">
-                            <input type="text" class="form-control" name="search" placeholder="Поиск">
-                        </div>
-                        <div class="form-group lg-4 offset-lg-1">
-                            <button type="submit button" class="btn btn-dark">Найти</button>
-                        </div>
-                    </form>
-                --> 
-                    
+                <form class="form-inline">
+                    <div class="form-group lg-7">
+                        <input type="text" class="form-control" name="search" placeholder="Поиск">
+                    </div>
+                    <div class="form-group lg-4 offset-lg-1">
+                        <button type="submit button" class="btn btn-dark">Найти</button>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -70,6 +76,19 @@
 <!--</form>-->
 
 
-    
+
 </body>
 </html>
+
+<script>
+
+
+    function goBack(){
+        history.back();
+    }
+
+    function goHome(){
+        window.location.href = "/";
+    }
+
+</script>

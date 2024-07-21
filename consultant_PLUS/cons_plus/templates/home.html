@@ -2,6 +2,15 @@
 {% load static %}
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YZNS2XSB28"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YZNS2XSB28');
+</script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,12 +32,11 @@
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
-                <button class="btn-style-3" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
+                <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
 
-                <!-- 
                     <form class="form-inline">
                         <div class="form-group lg-7">
                             <input type="text" class="form-control" name="search" placeholder="Поиск">
@@ -37,8 +45,6 @@
                             <button type="submit button" class="btn btn-dark">Найти</button>
                         </div>
                     </form>
-                --> 
-                    
                 </div>
             </div>
 
@@ -54,20 +60,22 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 ">
+            <div class="col-lg-5 offset-lg-1">
                 <div class="blok-description">
-                    Данная анкета поможет Вам разобраться с возможными проблемами при сдаче товара в ремонт или получить консультацию по выполненому ремонту (текс-заглушка)
+                    Данная анкета поможет Вам: 1) сдать товар в ремонт; 2) получить консультацию по ранее выполненному ремонту или 3) защитить Ваши права при отказе в проведении гарантийного ремонта. По прохождении всех вопросов анкеты Вы получите ответ на интересующую ситуацию, связанную с проведением ремонта.
+	Анкета направлена преимущественно на защиту прав собственников подержанных вещей при ремонте, однако она может подойти и собственникам новых вещей.
+	Юридическая консультация, представленная в решениях и статьях основана на действующем законодательстве и актуальной судебной практике.
                 </div>
                 <div class="blok">
-                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Ремонт</button>
+                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Пройти анкету</button>
                 </div>
             </div>
-            <div class="col-lg-6 ">
+            <div class="col-lg-5 ">
                 <div class="blok-description">
-                    Данная анкета поможет Вам разобраться с тем, как вернуть товар, бывший в употреблении, то есть б/у. Б/у товары продаются не новыми, их использовали ранее другие владельцы. Не все б/у товары можно вернуть. Данная анкета предусмотрена только для товаров ненадлежащего качества, имеющих недостатки, из-за которых использование товаров невозможно в полной мере и по назначению. Кроме того, если Ваша проблема связана с бытовой техникой, мобильными телефонами или прочими технически сложными товарами, то прохождение анкеты поможет Вам сдать товар такого типа.
+                    Данная анкета поможет Вам разобраться с тем, как вернуть/обменять <a href="/articles/С-Что_такое_б_у_товары.html"> товар, бывший в употреблении </a>. Анкета предусмотрена для решения вопросов в области возврата товаров <a href ="/articles/Готово_Что_такое_товар_надлежащего_качества.html">ненадлежащего качества </a>, имеющих недостатки, из-за которых использование невозможно в полной мере и по назначению.
                 </div>
                 <div class="blok">
-                    <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Возврат</button>
+                    <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Вернуть/обменять</button>
                 </div>
             </div>
         </div>
