@@ -29,11 +29,12 @@
 </head>
 <body style="background-color: #f5f5f8;">
 
+    <div class="content">
 
     <div class="menu">
         <div class="row">
             <div class="col-lg-4 offset-lg-1">
-                <button class="btn" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
+                <button class="btn-style-3" onclick="goHome()"><h1 class="text-style text-left"> <strong>Права подержанных вещей</strong></button>
             </div>
 
             <div class="col-lg-4 offset-lg-3">
@@ -46,42 +47,69 @@
                             <button type="submit button" class="btn btn-dark">Найти</button>
                         </div>
                     </form>
-                </div>
+            </div>
             </div>
 
         <div class="row">
                 <div class="col-lg-2 offset-lg-7">
-                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = '/tag_search/'">Каталог статей</button>
+                    <button type="button" class="btn  btn-lg btn-block btn-style-2 btn-sm" onclick="window.location.href = 'tag_search/'">Каталог статей</button>
                 </div>
                 <div class="col-lg-2 ">
-                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = '/all_docs/'">Каталог Шаблонов</button>
+                    <button type="button" class="btn btn-style-2 btn-lg btn-block btn-sm" onclick="window.location.href = 'all_docs/'">Каталог Шаблонов</button>
                 </div>
         </div>
     </div>
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-5 offset-lg-1">
-                <div class="blok-description">
-                    Данная анкета поможет Вам: 1) сдать товар в ремонт; 2) получить консультацию по ранее выполненному ремонту или 3) защитить Ваши права при отказе в проведении гарантийного ремонта. По прохождении всех вопросов анкеты Вы получите ответ на интересующую ситуацию, связанную с проведением ремонта.
-	Анкета направлена преимущественно на защиту прав собственников подержанных вещей при ремонте, однако она может подойти и собственникам новых вещей.
-	Юридическая консультация, представленная в решениях и статьях основана на действующем законодательстве и актуальной судебной практике.
-                </div>
-                <div class="blok">
-                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Пройти анкету</button>
+            <div class="col-lg-6 d-flex">
+                <div class="blok-description ">
+                    Данная анкета поможет Вам:
+                    <ol>
+                        <li>сдать товар в ремонт,</li>
+                        <li>получить консультацию по ранее выполненному ремонту,</li>
+                        <li>защитить Ваши права при отказе в проведении гарантийного ремонта.</li>
+                       </ol>
+	                Наши юридические решения и статьи основаны на действующем законодательстве и актуальной судебной практике.
                 </div>
             </div>
-            <div class="col-lg-5 ">
-                <div class="blok-description">
-                    Данная анкета поможет Вам разобраться с тем, как вернуть/обменять <a href="/articles/С-Что_такое_б_у_товары.html"> товар, бывший в употреблении </a>. Анкета предусмотрена для решения вопросов в области возврата товаров <a href ="/articles/Готово_Что_такое_товар_надлежащего_качества.html">ненадлежащего качества </a>, имеющих недостатки, из-за которых использование невозможно в полной мере и по назначению.
-                </div>
-                <div class="blok">
-                    <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Вернуть/обменять</button>
+            <div class="col-lg-6 d-flex">
+                <div class="blok-description ">
+                    Данная анкета поможет Вам:
+                    <ol>
+                        <li>вернуть <a href="/articles/С-Что_такое_б_у_товары.html"> товар, бывший в употреблении, </a></li>
+                        <li>обменять его на аналогичный товар.</li>
+                    </ol>
+                    Анкета предусмотрена для решения вопросов в области возврата товаров <a href ="/articles/Готово_Что_такое_товар_надлежащего_качества.html">ненадлежащего качества </a>, то есть имеющих недостатки, из-за которых использование невозможно в полной мере и по назначению.
+                    <br>
+                    <br>
+                    <p> Наши юридические решения и статьи основаны на действующем законодательстве и актуальной судебной практике.</p>
+
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-6 ">
+                <div class="blok">
+                    <button type="button"class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'repair/question/18/'">Пройти анкету про ремонт</button>
+                </div>
+            </div>
+            <div class="col-lg-6 ">
+                <div class="blok">
+                    <button type="button" class="btn btn-style-1 btn-lg btn-block" onclick="window.location.href = 'product/question/10/'">Пройти анкету про возврат/обмен </button>
+                </div>
+            </div>
     </div>
 
+    </div>
 
+<footer class="footer">
+    <p>pravapoderzannyhvesej@gmail.com</p>
+    Представленная на сайте справочная информация не является юридической консультацией.
+    <br>
+    Для получения индивидуальной консультации рекомендуем обратиться к юристу.
+    <br>
+</footer>
 </body>
 </html>
