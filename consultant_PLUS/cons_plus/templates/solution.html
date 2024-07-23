@@ -49,7 +49,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
-                    <h2 class="text-style">Краткое описание решения: </h2>
+                    
                     <h4>
                         {% for word in solution.solution_text.split %}
                             {% if word == "Закон_о_защите_прав_потребителей" %}
@@ -78,21 +78,25 @@
                                 {{ word }}
                             {% endif %}
                         {% endfor %}
+                        <br>
+                        <br>
                     </h4>
 
                     {% if solution.article %}
-                    <h2 class="text-style"> Ссылка на статью: </h2>
+                    <h6 class="text-style"> Более подробно читайте в статье: </h6>
                     <h4><a href="/articles/{{ solution.article.document }}"> {{ solution.article.name }}  </a></h4>
                     {% endif %}
 
                     {% if solution.document_template %}
-                    <h2 class="text-style"> Шаблон документа: </h2>
+                    <h6 class="text-style"> Шаблон документа: </h6>
                     <h4><a href="/doc_templates/{{ solution.document_template }}"> {{ solution.document_template }}  </a></h4>
                     {% endif %}
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 offset-lg-2">
+                    <br>
+                    <br>
                     <button type="button" class="btn btn-light" onclick="goBack()">Назад</button>
                     <button type="button" class="btn btn-light" onclick="goHome()">На главную</button>
                 </div>
